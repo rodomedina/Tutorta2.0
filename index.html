@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TuTorta Puerto Iguazú | Tortas Artesanales & Delivery</title>
-  <meta name="description" content="Pide las mejores tortas artesanales en Puerto Iguazú, Misiones. Opciones de retiro en local o delivery a domicilio con mapa interactivo y pedidos directos por WhatsApp.">
-  <meta name="keywords" content="tortas iguazu, delivery de tortas puerto iguazu, repostería iguazu, tutorta, cataratas dulce">
-  
+  <meta name="description"
+    content="Pide las mejores tortas artesanales en Puerto Iguazú, Misiones. Opciones de retiro en local o delivery a domicilio con mapa interactivo y pedidos directos por WhatsApp.">
+  <meta name="keywords"
+    content="tortas iguazu, delivery de tortas puerto iguazu, repostería iguazu, tutorta, cataratas dulce">
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/logo_selva.png">
 
@@ -19,6 +22,7 @@
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
 
   <!-- HEADER / NAVIGATION -->
@@ -59,10 +63,11 @@
         <i class="fa-solid fa-seedling"></i> Sabores de la Selva Misionera
       </div>
       <h1 class="hero-title">
-        Las Tortas Más Dulces de <span class="gold-text">Puerto Iguazú</span>
+        RODO<span class="gold-text">Puerto Iguazú</span>
       </h1>
       <p class="hero-description">
-        Repostería artesanal creada con pasión. Elige entre retirar en nuestro acogedor local o recibirlo por delivery con mapa de entrega en tiempo real.
+        Repostería artesanal creada con pasión. Elige entre retirar en nuestro acogedor local o recibirlo por delivery
+        con mapa de entrega en tiempo real.
       </p>
       <div class="hero-actions">
         <a href="#vidriera" class="btn-primary" id="btn-hero-catalog">
@@ -96,7 +101,8 @@
           <i class="fa-solid fa-store"></i>
         </div>
         <h3>Retiro en Local</h3>
-        <p>Retira tu torta fresca directamente por nuestro local céntrico. ¡Te esperamos con el mejor aroma a horneado!</p>
+        <p>Retira tu torta fresca directamente por nuestro local céntrico. ¡Te esperamos con el mejor aroma a horneado!
+        </p>
         <span class="option-tag"><i class="fa-solid fa-location-dot"></i> Av. Victoria Aguirre 450</span>
       </div>
 
@@ -105,7 +111,8 @@
           <i class="fa-solid fa-motorcycle"></i>
         </div>
         <h3>Envío por Delivery</h3>
-        <p>Enviamos tu pedido con máxima precaución. Selecciona tu ubicación exacta en el mapa y lo llevamos a tu puerta.</p>
+        <p>Enviamos tu pedido con máxima precaución. Selecciona tu ubicación exacta en el mapa y lo llevamos a tu
+          puerta.</p>
         <span class="option-tag"><i class="fa-solid fa-map-location-dot"></i> Mapa interactivo de ubicación</span>
       </div>
     </div>
@@ -170,7 +177,8 @@
         <input type="number" class="form-control" id="candles-input" placeholder="Ej: 25" min="0" max="99">
       </div>
 
-      <button class="btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;" id="confirm-add-to-cart">
+      <button class="btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;"
+        id="confirm-add-to-cart">
         <i class="fa-solid fa-cart-plus"></i> Agregar al Pedido (<span id="modal-calculated-price">$0</span>)
       </button>
     </div>
@@ -180,7 +188,8 @@
   <div class="cart-drawer-overlay" id="cart-overlay"></div>
   <aside class="cart-drawer glass-panel" id="cart-drawer">
     <div class="cart-header">
-      <h3 class="gold-text" style="font-family: var(--font-title);"><i class="fa-solid fa-basket-shopping"></i> Tu Pedido</h3>
+      <h3 class="gold-text" style="font-family: var(--font-title);"><i class="fa-solid fa-basket-shopping"></i> Tu
+        Pedido</h3>
       <button class="modal-close" id="close-cart-btn"><i class="fa-solid fa-xmark"></i></button>
     </div>
 
@@ -208,8 +217,10 @@
         <div class="pickup-box">
           <i class="fa-solid fa-store" style="font-size: 2rem; color: var(--gold-accent); margin-bottom: 0.5rem;"></i>
           <h4 style="color: var(--text-main);">Dirección del Local</h4>
-          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;">Av. Victoria Aguirre 450, Puerto Iguazú</p>
-          <p style="font-size: 0.8rem; color: var(--gold-accent);"><i class="fa-solid fa-clock"></i> Horario: 09:00 a 20:00 hs</p>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;">Av. Victoria Aguirre 450,
+            Puerto Iguazú</p>
+          <p style="font-size: 0.8rem; color: var(--gold-accent);"><i class="fa-solid fa-clock"></i> Horario: 09:00 a
+            20:00 hs</p>
         </div>
 
         <div class="form-group" style="margin-top: 1rem;">
@@ -236,11 +247,13 @@
           <label class="form-label" for="delivery-address">Calle y Número de Casa/Dpto:</label>
           <input type="text" class="form-control" id="delivery-address" placeholder="Ej: Av. Córdoba 123">
         </div>
-        
+
         <div class="form-group">
-          <label class="form-label"><i class="fa-solid fa-map-pin" style="color: var(--gold-accent);"></i> Ubicación en Mapa (Arrastra el marcador):</label>
+          <label class="form-label"><i class="fa-solid fa-map-pin" style="color: var(--gold-accent);"></i> Ubicación en
+            Mapa (Arrastra el marcador):</label>
           <div id="delivery-map"></div>
-          <small style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem; display: block;" id="map-coords-text">
+          <small style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem; display: block;"
+            id="map-coords-text">
             Haz clic o mueve el marcador para seleccionar el punto exacto de entrega.
           </small>
         </div>
@@ -268,12 +281,9 @@
   </aside>
 
   <!-- FLOATING WHATSAPP BUTTON (Direct to 3757571985) -->
-  <a href="https://wa.me/5493757571985?text=Hola!%20Quisiera%20hacer%20una%20consulta%20sobre%20sus%20tortas%20en%20Puerto%20Iguazú" 
-     class="floating-whatsapp" 
-     target="_blank" 
-     rel="noopener noreferrer" 
-     id="floating-whatsapp-btn" 
-     aria-label="Contactar por WhatsApp al 3757571985">
+  <a href="https://wa.me/5493757571985?text=Hola!%20Quisiera%20hacer%20una%20consulta%20sobre%20sus%20tortas%20en%20Puerto%20Iguazú"
+    class="floating-whatsapp" target="_blank" rel="noopener noreferrer" id="floating-whatsapp-btn"
+    aria-label="Contactar por WhatsApp al 3757571985">
     <i class="fa-brands fa-whatsapp"></i>
     <span class="wa-badge">1</span>
   </a>
@@ -289,7 +299,8 @@
             <span>Puerto Iguazú</span>
           </div>
         </div>
-        <p>La repostería artesanal más emblemática de Puerto Iguazú. Sabores únicos con ingredientes seleccionados de la selva misionera.</p>
+        <p>La repostería artesanal más emblemática de Puerto Iguazú. Sabores únicos con ingredientes seleccionados de la
+          selva misionera.</p>
       </div>
 
       <div class="footer-column">
@@ -322,4 +333,5 @@
   <!-- Application JS -->
   <script src="app.js"></script>
 </body>
+
 </html>
