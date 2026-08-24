@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TuTorta Puerto Iguazú | Tortas Artesanales & Delivery</title>
+  <meta name="description" content="Pide las mejores tortas artesanales en Puerto Iguazú, Misiones. Opciones de retiro en local o delivery a domicilio con mapa interactivo y pedidos directos por WhatsApp.">
+  <meta name="keywords" content="tortas iguazu, delivery de tortas puerto iguazu, repostería iguazu, tutorta, cataratas dulce">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo_selva.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Leaflet CSS for Interactive Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- HEADER / NAVIGATION -->
+  <header class="header glass-panel">
+    <div class="nav-container">
+      <a href="#" class="brand-logo" id="brand-logo-link">
+        <img src="assets/logo_selva.png" alt="TuTorta Puerto Iguazú Logo">
+        <div class="brand-name">
+          TuTorta
+          <span>Puerto Iguazú</span>
+        </div>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#inicio" class="nav-link" id="nav-home">Inicio</a></li>
+        <li><a href="#modalidades" class="nav-link" id="nav-modalities">Modalidades</a></li>
+        <li><a href="#vidriera" class="nav-link" id="nav-cakes">Vidriera de Tortas</a></li>
+        <li><a href="#contacto" class="nav-link" id="nav-contact">Ubicación</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="cart-btn" id="open-cart-btn" aria-label="Ver Carrito de Pedidos">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <span>Mi Pedido</span>
+          <span class="cart-count" id="cart-count-badge">0</span>
+        </button>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menú de navegación">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fa-solid fa-seedling"></i> Sabores de la Selva Misionera
+      </div>
+      <h1 class="hero-title">
+        Las Tortas Más Dulces de <span class="gold-text">Puerto Iguazú</span>
+      </h1>
+      <p class="hero-description">
+        Repostería artesanal creada con pasión. Elige entre retirar en nuestro acogedor local o recibirlo por delivery con mapa de entrega en tiempo real.
+      </p>
+      <div class="hero-actions">
+        <a href="#vidriera" class="btn-primary" id="btn-hero-catalog">
+          <i class="fa-solid fa-cake-candles"></i> Ver Vidriera
+        </a>
+        <button class="btn-secondary" id="btn-hero-order-fast">
+          <i class="fa-solid fa-bolt"></i> Hacer Pedido
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-image-wrapper">
+      <img src="assets/hero_torta.png" alt="Torta Artesanal de Presentación TuTorta Iguazú">
+      <div class="hero-floating-card glass-panel">
+        <div class="floating-icon">
+          <i class="fa-solid fa-truck-fast"></i>
+        </div>
+        <div class="floating-info">
+          <strong>Delivery Express</strong>
+          <p>Cobertura en todo Puerto Iguazú</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODALIDADES DE PEDIDO -->
+  <section class="options-banner" id="modalidades">
+    <div class="options-grid">
+      <div class="option-card glass-panel">
+        <div class="option-icon-box">
+          <i class="fa-solid fa-store"></i>
+        </div>
+        <h3>Retiro en Local</h3>
+        <p>Retira tu torta fresca directamente por nuestro local céntrico. ¡Te esperamos con el mejor aroma a horneado!</p>
+        <span class="option-tag"><i class="fa-solid fa-location-dot"></i> Av. Victoria Aguirre 450</span>
+      </div>
+
+      <div class="option-card glass-panel">
+        <div class="option-icon-box">
+          <i class="fa-solid fa-motorcycle"></i>
+        </div>
+        <h3>Envío por Delivery</h3>
+        <p>Enviamos tu pedido con máxima precaución. Selecciona tu ubicación exacta en el mapa y lo llevamos a tu puerta.</p>
+        <span class="option-tag"><i class="fa-solid fa-map-location-dot"></i> Mapa interactivo de ubicación</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATALOGO / VIDRIERA DE TORTAS -->
+  <section class="catalog-section" id="vidriera">
+    <div class="section-header">
+      <p class="section-subtitle">Delicias Exclusivas</p>
+      <h2 class="section-title">Vidriera de <span class="gold-text">Tortas</span></h2>
+    </div>
+
+    <!-- Category Filters -->
+    <div class="category-filters" id="category-filters">
+      <button class="filter-btn active" data-category="all" id="filter-all">Todas</button>
+      <button class="filter-btn" data-category="chocolate" id="filter-chocolate">Chocolates</button>
+      <button class="filter-btn" data-category="frutal" id="filter-frutal">Frutales & Selva</button>
+      <button class="filter-btn" data-category="especial" id="filter-especial">Especiales</button>
+    </div>
+
+    <!-- Grid Container for Dynamic Cakes -->
+    <div class="cakes-grid" id="cakes-grid">
+      <!-- Dynamically filled via JavaScript -->
+    </div>
+  </section>
+
+  <!-- MODAL DE PERSONALIZACIÓN DE TORTA -->
+  <div class="modal-overlay" id="customize-modal">
+    <div class="modal-card glass-panel">
+      <button class="modal-close" id="modal-close-btn"><i class="fa-solid fa-xmark"></i></button>
+
+      <div class="modal-header">
+        <img src="" id="modal-cake-img" alt="Torta Seleccionada">
+        <div>
+          <h3 id="modal-cake-title" class="gold-text">Título Torta</h3>
+          <p id="modal-cake-desc" style="font-size: 0.85rem; color: var(--text-muted);"></p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Elige el Tamaño:</label>
+        <div class="size-options">
+          <button class="size-option-btn active" data-size="Chica" data-price-mod="1" id="size-small">
+            <strong>Chica</strong> (1.5 kg - ~8 porciones)
+          </button>
+          <button class="size-option-btn" data-size="Mediana" data-price-mod="1.4" id="size-medium">
+            <strong>Mediana</strong> (2.2 kg - ~14 porciones)
+          </button>
+          <button class="size-option-btn" data-size="Grande" data-price-mod="1.8" id="size-large">
+            <strong>Grande</strong> (3.0 kg - ~20 porciones)
+          </button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="custom-text-input">Texto o Dedicatoria en la Torta (Opcional):</label>
+        <input type="text" class="form-control" id="custom-text-input" placeholder="Ej: ¡Feliz Cumple Mamá!">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="candles-input">Número de Velas (Opcional):</label>
+        <input type="number" class="form-control" id="candles-input" placeholder="Ej: 25" min="0" max="99">
+      </div>
+
+      <button class="btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;" id="confirm-add-to-cart">
+        <i class="fa-solid fa-cart-plus"></i> Agregar al Pedido (<span id="modal-calculated-price">$0</span>)
+      </button>
+    </div>
+  </div>
+
+  <!-- DRAWER / MODAL DE CARRITO Y CHECKOUT -->
+  <div class="cart-drawer-overlay" id="cart-overlay"></div>
+  <aside class="cart-drawer glass-panel" id="cart-drawer">
+    <div class="cart-header">
+      <h3 class="gold-text" style="font-family: var(--font-title);"><i class="fa-solid fa-basket-shopping"></i> Tu Pedido</h3>
+      <button class="modal-close" id="close-cart-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="cart-body">
+      <!-- Items Container -->
+      <div id="cart-items-list">
+        <!-- Filled via JS -->
+      </div>
+
+      <!-- Order Type Selector (Pickup vs Delivery) -->
+      <div style="margin-top: 2rem;">
+        <label class="form-label" style="text-align: center; display: block;">Modalidad de Entrega:</label>
+        <div class="order-type-toggle">
+          <button class="toggle-btn active" id="toggle-pickup">
+            <i class="fa-solid fa-store"></i> Retiro en Local
+          </button>
+          <button class="toggle-btn" id="toggle-delivery">
+            <i class="fa-solid fa-truck"></i> Delivery
+          </button>
+        </div>
+      </div>
+
+      <!-- RETIRO EN LOCAL SECTION -->
+      <div class="pickup-section active" id="pickup-section">
+        <div class="pickup-box">
+          <i class="fa-solid fa-store" style="font-size: 2rem; color: var(--gold-accent); margin-bottom: 0.5rem;"></i>
+          <h4 style="color: var(--text-main);">Dirección del Local</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;">Av. Victoria Aguirre 450, Puerto Iguazú</p>
+          <p style="font-size: 0.8rem; color: var(--gold-accent);"><i class="fa-solid fa-clock"></i> Horario: 09:00 a 20:00 hs</p>
+        </div>
+
+        <div class="form-group" style="margin-top: 1rem;">
+          <label class="form-label" for="pickup-name">Nombre de quien retira:</label>
+          <input type="text" class="form-control" id="pickup-name" placeholder="Tu Nombre y Apellido">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="pickup-phone">Teléfono de contacto:</label>
+          <input type="tel" class="form-control" id="pickup-phone" placeholder="Ej: 3757123456">
+        </div>
+      </div>
+
+      <!-- DELIVERY SECTION WITH INTERACTIVE MAP -->
+      <div class="delivery-section" id="delivery-section">
+        <div class="form-group">
+          <label class="form-label" for="delivery-name">Nombre Completo:</label>
+          <input type="text" class="form-control" id="delivery-name" placeholder="Nombre para el envío">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="delivery-phone">Teléfono de contacto:</label>
+          <input type="tel" class="form-control" id="delivery-phone" placeholder="Ej: 3757123456">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="delivery-address">Calle y Número de Casa/Dpto:</label>
+          <input type="text" class="form-control" id="delivery-address" placeholder="Ej: Av. Córdoba 123">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label"><i class="fa-solid fa-map-pin" style="color: var(--gold-accent);"></i> Ubicación en Mapa (Arrastra el marcador):</label>
+          <div id="delivery-map"></div>
+          <small style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem; display: block;" id="map-coords-text">
+            Haz clic o mueve el marcador para seleccionar el punto exacto de entrega.
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="delivery-notes">Referencias para el delivery (Opcional):</label>
+          <input type="text" class="form-control" id="delivery-notes" placeholder="Ej: Portón verde frente a la plaza">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CART FOOTER -->
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Total Estimado:</span>
+        <span class="gold-text" id="cart-total-price">$0</span>
+      </div>
+
+      <button class="btn-whatsapp-order" id="btn-send-whatsapp">
+        <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i>
+        Enviar Pedido por WhatsApp
+      </button>
+    </div>
+  </aside>
+
+  <!-- FLOATING WHATSAPP BUTTON (Direct to 3757571985) -->
+  <a href="https://wa.me/5493757571985?text=Hola!%20Quisiera%20hacer%20una%20consulta%20sobre%20sus%20tortas%20en%20Puerto%20Iguazú" 
+     class="floating-whatsapp" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     id="floating-whatsapp-btn" 
+     aria-label="Contactar por WhatsApp al 3757571985">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="wa-badge">1</span>
+  </a>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contacto">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="brand-logo">
+          <img src="assets/logo_selva.png" alt="TuTorta Logo">
+          <div class="brand-name">
+            TuTorta
+            <span>Puerto Iguazú</span>
+          </div>
+        </div>
+        <p>La repostería artesanal más emblemática de Puerto Iguazú. Sabores únicos con ingredientes seleccionados de la selva misionera.</p>
+      </div>
+
+      <div class="footer-column">
+        <h4>Modalidades</h4>
+        <ul class="footer-links">
+          <li><i class="fa-solid fa-check" style="color: var(--gold-accent);"></i> Retiro en Local Céntrico</li>
+          <li><i class="fa-solid fa-check" style="color: var(--gold-accent);"></i> Delivery con GPS</li>
+          <li><i class="fa-solid fa-check" style="color: var(--gold-accent);"></i> Pedidos Personalizados</li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Contacto Directo</h4>
+        <ul class="footer-links">
+          <li><i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> 3757-571985</li>
+          <li><i class="fa-solid fa-location-dot" style="color: var(--gold-accent);"></i> Av. Victoria Aguirre 450</li>
+          <li><i class="fa-solid fa-clock" style="color: var(--gold-accent);"></i> Lun - Dom: 9:00 a 20:00 hs</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 TuTorta Puerto Iguazú. Todos los derechos reservados. Repostería Selvática Artesanal.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Leaflet JS for Map -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <!-- Application JS -->
+  <script src="app.js"></script>
+</body>
+</html>
