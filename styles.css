@@ -743,18 +743,23 @@ img {
 .cart-drawer {
   position: fixed;
   top: 0;
-  right: -450px;
+  right: 0;
   width: 100%;
   max-width: 440px;
   height: 100vh;
+  height: 100dvh;
   z-index: 2500;
-  transition: right var(--transition-normal);
+  transform: translateX(100%);
+  transition: transform var(--transition-normal);
   display: flex;
   flex-direction: column;
+  background: #0A2E23;
+  border-left: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-lg);
 }
 
 .cart-drawer.open {
-  right: 0;
+  transform: translateX(0);
 }
 
 .cart-drawer-overlay {
